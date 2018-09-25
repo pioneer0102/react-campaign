@@ -1,13 +1,12 @@
 const express = require("express");
+require("./services/passport");
 
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send({ bye: "there" });
-});
+require("./routes/authRoutes")(app);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`Server is up and running on Port ${PORT}`);
+  console.log(`Server is up on Port ${PORT}`);
 });
