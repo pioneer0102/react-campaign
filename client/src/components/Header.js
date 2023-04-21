@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 import Payments from "./Payments";
 
+
 class Header extends Component {
   renderContent() {
-    console.log("Auth value:", this.props.auth);
     switch (this.props.auth) {
       case null:
         return;
@@ -33,11 +33,12 @@ class Header extends Component {
 
   render() {
     return (
-      <nav>
+      <nav style={{width: "100vw"}}>
         <div className="nav-wrapper">
           <Link
             to={this.props.auth ? "/surveys" : "/"}
             className="left brand-logo"
+            style={{paddingLeft: "30px"}}
           >
             CamPane
           </Link>

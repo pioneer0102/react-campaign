@@ -29,7 +29,7 @@ class Mailer {
       }
     };
 
-    console.log(msg);
+    // console.log(msg);
 
     try {
       const response = await sgMail.send(msg);

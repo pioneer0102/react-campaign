@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <div>
         <BrowserRouter>
-          <div className="container">
+          <div className="container" style={{margin: "0px", width: "100vw"}}>
             <Header />
             <Route exact path="/" component={Landing} />
             <Route exact path="/surveys" component={Dashboard} />
