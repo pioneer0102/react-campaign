@@ -6,6 +6,17 @@ import _ from "lodash";
 import * as actions from "../../actions";
 import { withRouter } from "react-router-dom";
 
+let surveyFormReviewStyle = {
+  view: "flex",
+  width: "100vw",
+  justifyContent: "center",
+  padding: "2rem"
+};
+
+let buttonRowStyle = {
+  paddingTop: "2rem"
+}
+
 const SurveyFormReview = ({ onCancel, formValues, submitSurvey, history }) => {
   const reviewFields = _.map(formFields, ({ name, label }) => {
     return (
@@ -17,22 +28,25 @@ const SurveyFormReview = ({ onCancel, formValues, submitSurvey, history }) => {
   });
 
   return (
-    <div>
+    <div style={surveyFormReviewStyle}>
       <h5>Please confirm your entries </h5>
       {reviewFields}
-      <button
-        className="yellow darken-3 white-text btn-flat"
-        onClick={onCancel}
-      >
-        Back
-      </button>
-      <button
-        onClick={() => submitSurvey(formValues, history)}
-        className="green white-text btn-flat right"
-      >
-        Send Survey
-        <i className="material-icons right">email</i>
-      </button>
+
+      <div style={buttonRowStyle}>
+        <button
+          className="yellow darken-3 white-text btn-flat"
+          onClick={onCancel}
+        >
+          Back
+        </button>
+        <button
+          onClick={() => submitSurvey(formValues, history)}
+          className="green white-text btn-flat right"
+        >
+          Send Survey
+          <i className="material-icons right">email</i>
+        </button>
+      </div>
     </div>
   );
 };
