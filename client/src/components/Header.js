@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 import Payments from "./Payments";
-
 
 class Header extends Component {
   renderContent() {
@@ -32,22 +31,25 @@ class Header extends Component {
   }
 
   render() {
-    return (
-      <div className="navbar-fixed">
-      <nav>
-        <div className="nav-wrapper">
-          <Link
-            to={this.props.auth ? "/surveys" : "/"}
-            className="left brand-logo"
-            style={{paddingLeft: "30px"}}
-          >
-            CamPane
-          </Link>
-          <ul className="right">{this.renderContent()}</ul>
+      const isSurveysPage = this.props.location.pathname === "/surveys";
+      const linkTo = this.props.auth ? (isSurveysPage ? "/" : "/surveys") : "/";
+
+      return (
+        <div className="navbar-fixed">
+          <nav>
+            <div className="nav-wrapper">
+              <Link
+                to={linkTo}
+                className="left brand-logo"
+                style={{ paddingLeft: "30px" }}
+              >
+                Campane
+              </Link>
+              <ul className="right">{this.renderContent()}</ul>
+            </div>
+          </nav>
         </div>
-      </nav>
-      </div>
-    );
+      );
   }
 }
 
@@ -55,4 +57,4 @@ function mapStateToProps({ auth }) {
   return { auth };
 }
 
-export default connect(mapStateToProps)(Header);
+export default withRouter(connect(mapStateToProps)(Header));

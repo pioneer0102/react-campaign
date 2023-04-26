@@ -33,7 +33,6 @@ class Mailer {
 
     try {
       const response = await sgMail.send(msg);
-      console.log("Email sent:", response);
       return response;
     } catch (error) {
       console.error("Email sending error:", error);

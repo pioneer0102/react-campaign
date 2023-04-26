@@ -1,0 +1,27 @@
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.step-section {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+
+.fadeInUp {
+  animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
