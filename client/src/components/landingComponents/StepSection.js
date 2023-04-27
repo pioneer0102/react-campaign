@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import "../../styles.css";
 import { useIntersectionObserver } from '../../utils/useIntersectionObserver.js';
 
@@ -8,9 +8,7 @@ const StepSection = ({ svgPath1, svgPath2, text, index }) => {
   const ref = useRef();
   const isVisible = useIntersectionObserver(ref);
 
-  console.log(isVisible);
-
-  const animationDelay = index * 250; // You can adjust the delay value here
+  const animationDelay = index * 400; // You can adjust the delay value here
 
   return (
     <div
@@ -32,7 +30,7 @@ const StepSection = ({ svgPath1, svgPath2, text, index }) => {
         style={{
           display: "flex",
           justifyContent: "center",
-          color: "red",
+          color: "#FF6666",
           fontSize: "1.5rem",
         }}
       >

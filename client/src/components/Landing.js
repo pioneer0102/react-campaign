@@ -1,5 +1,8 @@
 import React from "react";
 import StepSection from "./landingComponents/StepSection";
+import LandingTextBox from "./landingComponents/LandingTextBox";
+
+import "../styles.css";
 
 const Landing = () => {
   return (
@@ -14,24 +17,14 @@ const Landing = () => {
           />
         </div>
 
-        <div
-          style={{
-            flex: 1,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            padding: "2rem"
-          }}
-        >
-          <h2 style={{color: "grey", fontSize: "5rem", marginBottom: "2rem" }}>Empower your email campaigns today</h2>
-          <p style={{ color: "grey", fontSize: "1.5rem"}}>
-            With Campane, you can send emails to as many recipients as you need,
-            track the answers from your surveys, and log in simply using your Google account!
-          </p>
-        </div>
+        <LandingTextBox
+          heading="Empower your email campaigns today"
+          paragraph="With Campane, you can send emails to as many recipients as you need,
+          track the answers from your surveys, and log in simply using your Google account!"
+        />
       </div>
 
-      <div style={{ display: "flex", height: "100vh", width: "100vw", padding: "10rem"}}>
+      <div className={"wide-section"}>
 
         <StepSection
           svgPath1="M9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383h1.312Z"
@@ -54,6 +47,25 @@ const Landing = () => {
           index="2"
         />
 
+      </div>
+
+      <div>
+        <div style={{ display: "flex", width: "100vw"}}>
+
+          <LandingTextBox
+            heading="Make sending all those emails easier"
+            paragraph="Campane can send emails and track the answers to a simple
+            Yes/No survey question. So log in, add some credits, and get started!"
+          />
+
+          <div style={{ flex: 1 }}>
+            <img
+              style={{ width: "100%", height: "100vh", objectFit: "cover" }}
+              src="../images/message.png"
+              alt="A screen indicating an email icon"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

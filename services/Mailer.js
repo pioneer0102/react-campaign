@@ -19,7 +19,7 @@ class Mailer {
   async send() {
     const msg = {
       to: this.formatAddresses(this.recipients),
-      from: "michael@pipedreamstudios.net",
+      from: "no.reply.campane@gmail.com",
       subject: this.subject,
       html: this.content,
       trackingSettings: {
